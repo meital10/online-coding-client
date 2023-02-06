@@ -3,7 +3,7 @@ import LobbyPage from "./components/lobbypage/LobbyPage";
 import CodeBlockPage from "./components/codeBlockPage/CodeBlockPage";
 import socketIO from "socket.io-client";
 
-const socket = socketIO.connect("http://localhost:4000");
+const socket = socketIO.connect("https://online-coding-server.onrender.com");
 function App() {
   return (
     <BrowserRouter>
