@@ -1,14 +1,14 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 
-// to highlight the block code syntax. need to be fixed before use. relevant to lines:5-6,11,49-51,81-94 instead of 62-68
+// highlight.js doest work properly. in comments. fix or change to another library
 // import hljs from "highlight.js";
 // import "highlight.js/styles/default.css";
 
 import "./CodeBlockPage.css";
 
 const CodeBlockPage = ({ socket }) => {
-  // const textAreaRef = useRef(null);
+  // const textAreaRef = React.useRef(null);
   const navigate = useNavigate();
   const { id } = useParams();
   const [code, setCode] = useState({});
@@ -24,9 +24,6 @@ const CodeBlockPage = ({ socket }) => {
 
   useEffect(() => {
     socket.on("editCodeBlock-response", (data) => {
-      console.log("THE CAHNGED DATA", data);
-      console.log("DATAID AND CODEID :", code._id);
-
       // temporary solution for getting the update code block from the server.
       //  A better solution would be using rooms in socket.io on the server
       if (data.id === code._id) {
@@ -67,19 +64,18 @@ const CodeBlockPage = ({ socket }) => {
             readOnly={userType === "mentor"}
           ></textarea>
         )}
+        <button className="btn" onClick={handleBtnClick}>
+          BACK TO LOBBY
+        </button>
       </div>
-
-      <button className="btn" onClick={handleBtnClick}>
-        BACK TO LOBBY
-      </button>
     </>
   );
 };
 
 export default CodeBlockPage;
 
-{
-  /* <pre>
+// for using highlight.js. replacing with lines 60-68
+/* <pre>
 <code
   className="javascript"
   ref={textAreaRef}
@@ -93,4 +89,3 @@ export default CodeBlockPage;
   {code.code}
 </code>
 </pre> */
-}
