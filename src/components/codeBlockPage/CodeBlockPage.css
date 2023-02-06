@@ -1,0 +1,49 @@
+.code-header {
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+  font-size: 1.875rem;
+  color: rgb(107, 5, 12);
+  padding: 1.875rem;
+  font-weight: 700;
+}
+
+.welcome-user {
+  color: #4a6998;
+  margin-left: 1.125rem;
+  margin-top: 0.6rem;
+}
+
+.code-container > * {
+  margin-bottom: 0.6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+.code-erea {
+  width: 50%;
+  height: 70vh;
+  padding: 15px;
+  background-color: #ebebf9;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.125rem;
+
+  /* overflow-y: scroll; */
+}
+
+.btn {
+  padding: 0.6rem;
+  margin-top: 0.6rem;
+  width: 150px;
+  border: none;
+  outline: none;
+  background-color: #4a6998;
+  cursor: pointer;
+  color: #f4f2ee;
+}
